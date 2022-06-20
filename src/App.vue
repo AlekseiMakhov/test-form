@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MainHeader />
+    <div class="workspace">
+      <CatalogPage />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CatalogPage from './views/CatalogPage'
+import MainHeader from './components/MainHeader'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { CatalogPage, MainHeader },
 }
 </script>
 
 <style lang="scss">
+@import "assets/css/reset";
+@import "assets/css/global";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  width: 100%;
+  position: relative;
+}
+
+.workspace {
   margin-top: 60px;
+  padding: 30px;
+  width: 100%;
+  background-color: $base-bg;
 }
 </style>
