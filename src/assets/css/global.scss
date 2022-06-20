@@ -1,0 +1,34 @@
+.disabled {
+  cursor: default !important;
+  pointer-events: none !important;
+  opacity: 0.8 !important;
+  color: #777777 !important;
+  & > .svg-icon {
+    background-color: $icon-default;
+  }
+}
+
+*:hover {
+  & > .svg-icon {
+    background-color: $active;
+  }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input[type='number']:hover,
+input[type='number']:focus {
+  -moz-appearance: number-input;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
