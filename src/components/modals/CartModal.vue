@@ -15,6 +15,9 @@
         @change-value="changeCount"
         @set-error="setError"
       />
+      <div class="total">
+        {{ totalText }}
+      </div>
       <div class="modal__btns">
         <v-btn
           :disabled="disabled"
@@ -72,6 +75,12 @@ export default {
     },
     hasError() {
       return !!this.errors.length
+    },
+    total() {
+      return this.items.reduce((res, item) => res + item.C * item.count, 0).toFixed(config.priceDigitsNumber)
+    },
+    totalText() {
+      return `Общая сумма: ${this.total} руб.`
     }
   },
 
@@ -135,6 +144,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.total {
+  text-align: end;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 30px auto;
+}
+
 .modal {
   padding: 30px;
   background: $white;
