@@ -140,7 +140,7 @@ export default {
     background-color: rgba($color: $green, $alpha: .3);
   }
   &__normal {
-    &:nth-last-of-type(2n) {
+    &:nth-of-type(even) {
       background-color: $light-gray;
     }
   }
