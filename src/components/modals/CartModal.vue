@@ -101,7 +101,7 @@ export default {
 
     changeCount(value, item) {
       const idx = findIndex(this.items, item)
-      this.items.map((el, i) => {
+      this.items = this.items.map((el, i) => {
         if (i === idx) {
           el.count = value
         }
